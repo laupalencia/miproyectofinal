@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users, path: '',
+                     path_names:  { sign_in: 'login', sign_up: 'signup' },
+                     controllers: { sessions: 'users/sessions'}
+
+  
   get 'home', to: 'home#index'
+  get '/users/:id', to: 'users#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
