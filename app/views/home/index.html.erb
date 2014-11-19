@@ -5,7 +5,7 @@
 				<%= link_to 'Login', new_user_session_path %>
 			</button>
 			<button type="button" class="btn btn-default boton">
-				Sign up
+				<%= link_to 'Sign up', new_user_registration_path %>
 			</button>
 		</article>
 		<article class="design"></article>
@@ -15,7 +15,6 @@
 	</section>
 	<section>
 		<div id='calendar'></div>
-		
 		
 		
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -36,12 +35,12 @@
         					</article>
         					<article>
         						<p class="preguntaForm">¿Cuál es?</p>
-								<input type="text" class="form-control" placeholder="Ej. Macarrones con tomate">
+								<input type="text" id="comida" class="form-control" placeholder="Ej. Macarrones con tomate">
         					</article>
       					</div>
       					<div class="modal-footer">
         					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        					<button type="button" class="btn btn-primary">Save changes</button>
+        					<button type="button" class="btn btn-primary" id="save" >Save changes</button>
       					</div>
     				</div>
   				</div>
@@ -53,4 +52,5 @@
 			<p>Tu lista de la compra</p>
 		</article>
 	</section>
+
 </body>

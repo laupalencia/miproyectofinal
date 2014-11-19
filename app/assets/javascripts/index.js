@@ -9,14 +9,18 @@ var createEventAtMoment =function(moment, title) {
 	$('#calendar').fullCalendar('renderEvent', event);
 }
 
-//Aquí, al hacer click en el día, te crea un evento
+//Hacer click en un día
 var dayClicked = function(date, jsEvent, view) {
 	//displayEventCreationOptions()
 
 	//Con esto de abajo se crea un nuevo evento donde pinchas:
-	createEventAtMoment(date, 'Evento de prueba');
+	//createEventAtMoment(date, 'Evento de prueba');
+	
+	//Con esto al hacer click en un día, se muestra el formulario
 	$('#myModal').modal('show') 
 }
+
+
 
 var createEventWithOptions = function() {
 	//extraer datos para el evento de las opciones del overlay
@@ -40,4 +44,12 @@ $(document).ready(function() {
 		//}
     })
 
+});
+
+$(document).ready(function()
+	{
+		//Aquí abajo llamas al id del boton de Guardar, que cuando hagas click
+	$("#save").click(function () {
+	createEventAtMoment(date, '#comida'.val());
+	});
 });
