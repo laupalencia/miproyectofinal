@@ -12,7 +12,10 @@ var createEventAtMoment =function(moment, title) {
 //Aquí, al hacer click en el día, te crea un evento
 var dayClicked = function(date, jsEvent, view) {
 	//displayEventCreationOptions()
+
+	//Con esto de abajo se crea un nuevo evento donde pinchas:
 	createEventAtMoment(date, 'Evento de prueba');
+	$('#myModal').modal('show') 
 }
 
 var createEventWithOptions = function() {

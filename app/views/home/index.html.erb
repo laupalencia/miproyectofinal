@@ -1,36 +1,51 @@
 <body>
 	<header>
-		<article class="design">
+		<article class="encabezado">
+			<button type="button" class="btn btn-default boton">
+				<%= link_to 'Login', new_user_session_path %>
+			</button>
+			<button type="button" class="btn btn-default boton">
+				Sign up
+			</button>
 		</article>
+		<article class="design"></article>
 	</header>
 	<section class="titulo">
 		<p>DISEÑA TU MENU</p>
-		<%= link_to 'Login', new_user_session_path %>
 	</section>
 	<section>
 		<div id='calendar'></div>
 		
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
-
-
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        holitas
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+		
+		
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  				<div class="modal-dialog">
+    				<div class="modal-content">
+      					<div class="modal-header">
+        					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        					<h4 class="modal-title" id="myModalLabel">Tu menu</h4>
+      					</div>
+      					<div class="modal-body">
+        					<article>
+        						<p class="preguntaForm">¿Qué tipo de comida?</p>
+        						<select class="form-control">
+  									<option>Desayuno</option>
+  									<option>Comida</option>
+  									<option>Cena</option>
+								</select>
+        					</article>
+        					<article>
+        						<p class="preguntaForm">¿Cuál es?</p>
+								<input type="text" class="form-control" placeholder="Ej. Macarrones con tomate">
+        					</article>
+      					</div>
+      					<div class="modal-footer">
+        					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        					<button type="button" class="btn btn-primary">Save changes</button>
+      					</div>
+    				</div>
+  				</div>
+			</div>
 
 	</section>
 	<section>

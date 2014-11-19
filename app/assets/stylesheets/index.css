@@ -1,4 +1,12 @@
-header{
+
+.encabezado{
+	background-color: #A8CCFB;
+	width:100%;
+}
+.boton{
+	padding:10px;
+}
+.design{
 	background-image: url("calendario_nutricion8.jpg");
 	background-size: 100%;         
 	width:100%;
@@ -30,4 +38,13 @@ header{
 	border: 1px solid #A8CCFB;	
 	border-radius:12px;
 	background-color:#A8CCFB;
+}
+.preguntaForm{
+	font-weight: bold;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+.modal-title{
+	font-weight: bold;
+	font-size: 20px;
 }
