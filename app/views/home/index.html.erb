@@ -1,12 +1,11 @@
 <body>
 	<header>
 		<article class="encabezado">
-			<button type="button" class="btn btn-default boton">
-				<%= link_to 'Login', new_user_session_path %>
-			</button>
-			<button type="button" class="btn btn-default boton">
-				<%= link_to 'Sign up', new_user_registration_path %>
-			</button>
+			<ul class="lista">
+				<li><%= link_to 'Login', new_user_session_path %></li>
+			
+				<li><%= link_to 'Sign up', new_user_registration_path %></li>
+			</ul>
 		</article>
 		<article class="design"></article>
 	</header>
@@ -47,10 +46,11 @@
 			</div>
 
 	</section>
+
 	<section>
 		<article class="listadelacompra">
 			<p>Tu lista de la compra</p>
 		</article>
 	</section>
-
+	
 </body>

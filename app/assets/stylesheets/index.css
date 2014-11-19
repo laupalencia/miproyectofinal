@@ -2,6 +2,15 @@
 .encabezado{
 	background-color: #A8CCFB;
 	width:100%;
+	height:40px;
+}
+.lista{
+	float:right;
+	font-size: 35px;
+}
+.lista>li{
+	display:inline;
+	padding-right: 20px;
 }
 .boton{
 	padding:10px;
