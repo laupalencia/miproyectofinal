@@ -1,6 +1,6 @@
 
 .encabezado{
-	background-color: #A8CCFB;
+	background-color: #6495ED;
 	width:100%;
 	height:40px;
 }
@@ -29,7 +29,7 @@
 	color:#000000;
 }
 .fc-day-header.fc-widget-header{
-	background-color: #A8CCFB;
+	background-color: #6495ED;
 	height:40px;
 }
 
@@ -44,9 +44,9 @@
 	text-align: center;
 	width:98%;
 	height:50px;
-	border: 1px solid #A8CCFB;	
+	border: 1px solid #6495ED;	
 	border-radius:12px;
-	background-color:#A8CCFB;
+	background-color:#6495ED;
 }
 .preguntaForm{
 	font-weight: bold;
@@ -57,3 +57,56 @@
 	font-weight: bold;
 	font-size: 20px;
 }
+.chef{
+	padding-bottom:20px;
+	padding-top:20px;
+	height:250px;
+	position:relative;
+	bottom:10px;
+}
+
+.speech-bubble {
+	margin-left: 35px;
+	margin-top: 20px;
+  	background: #6495ED; 
+  	color: #FFF; 
+  	font-family: Arial, Sans-serif;
+	font-size: 12px;
+	padding: 20px 10px 10px 10px;
+	text-align: center;
+	width: 200px;
+	border-radius: 10px;
+}
+.speech-bubble:after {
+  border: solid 10px transparent;
+  border-top-color: #6495ED;  
+  border-bottom: 0;
+  bottom: -20px; 
+  content: "";
+  display: block;
+  height: 0;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 0;
+}
+.tulista{
+	background-color:#6495ED;
+	margin-left:160px;
+	margin-top:160px;
+	width:56%;
+	height:500px;
+	border-radius: 10px;
+}
+.michef{
+	float:left;
+}
+.tulistadelacompra{
+	padding:30px;
+	font-size: 30px;
+	color:white;
+}
+.todolist{
+	margin-bottom:20px;
+}
+

@@ -1,3 +1,4 @@
+//Aquí se inicia el calendario
 var initCalendar = function() {
   $('#calendar').fullCalendar({
     dayClick: dayClicked
@@ -9,6 +10,7 @@ var initCalendar = function() {
   });
 };
 
+//Aquí se crea el evento
 var createEventAtMoment =function(title) {
   var event = {
     "title" : title,
@@ -20,9 +22,10 @@ var createEventAtMoment =function(title) {
   $('#calendar').fullCalendar('renderEvent', event);
 };
 
-//Hacer click en un día
+//Clickar en un día
 var dayClicked = function(date, jsEvent, view) {
   //displayEventCreationOptions()
+
   //Con esto de abajo se crea un nuevo evento donde pinchas:
   //createEventAtMoment(date, 'Evento de prueba');
   $('#myModal').modal('show');
@@ -40,7 +43,6 @@ var dayClicked = function(date, jsEvent, view) {
 };
 
 
-
 var createEventWithOptions = function() {
   //extraer datos para el evento de las opciones del overlay
   //createEventAtMoment(...)
@@ -51,11 +53,8 @@ var displayEventCreationOptions = function() {
 };
 
 $(document).ready(function() {
-
     // page is now ready, initialize the calendar...
     initCalendar();
-    
-
 });
 
 $(document).ready(function()
@@ -68,3 +67,38 @@ $(document).ready(function()
   });
 });
 
+
+
+////////////////////
+//Lista de la compra
+////////////////////
+var mydiv = document.getElementById('addinput');
+mydiv.onclick = function(event){
+   //Variables que nos recoge el valor de los inputs
+  var producto = document.getElementById('producto').value;
+  var precio = document.getElementById('precio').value;
+  var lugar = document.getElementById('lugar').value;
+
+  var h1 = document.createElement("h1");
+  var h2 = document.createElement("h2");
+  var h3 = document.createElement("h3");
+ 
+  //Variables que crea un texto de lo que hay en cada input
+  var textoProducto = document.createTextNode(producto);
+  var textoPrecio = document.createTextNode(precio);
+  var textoLugar = document.createTextNode(lugar);
+  //
+  var myli = document.createElement('li');
+  var mylist = document.getElementById('list');
+  //
+  h1.appendChild(textoProducto);
+  h2.appendChild(textoPrecio);
+  h3.appendChild(textoLugar);
+  //
+  myli.appendChild(h1);
+  myli.appendChild(h2);
+  myli.appendChild(h3);
+
+  mylist.appendChild(myli);
+  //
+ }

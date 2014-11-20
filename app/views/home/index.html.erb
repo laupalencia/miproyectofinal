@@ -47,10 +47,18 @@
 
 	</section>
 
-	<section>
-		<article class="listadelacompra">
-			<p>Tu lista de la compra</p>
-		</article>
+	<section class="michef">
+		<div class="speech-bubble"> Crea tu lista de la compra. Añade el producto, el precio y dónde lo quieres comprar. </div>
+		<article> <%= image_tag 'chef.jpg' , class:"chef " %></article>
+	</section>
+
+	<section class="tulista">
+		<h1 class="tulistadelacompra">TU LISTA DE LA COMPRA</h1>
+		<ul id="list"></ul>
+     	<input class="todolist" id="producto" type="text" placeholder="Producto">
+     	<input class="todolist" id="precio" type="text" placeholder="Precio">
+     	<input class="todolist" id="lugar" type="text" placeholder="Establecimiento">
+     	<button id="addinput" class="btn btn-primary">Añadir producto</button> 
 	</section>
 	
 </body>
