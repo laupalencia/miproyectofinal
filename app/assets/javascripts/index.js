@@ -73,15 +73,15 @@ $(document).ready(function()
 //Lista de la compra
 ////////////////////
 var mydiv = document.getElementById('addinput');
-mydiv.onclick = function(event){
+mydiv.onclick = function(){
    //Variables que nos recoge el valor de los inputs
   var producto = document.getElementById('producto').value;
   var precio = document.getElementById('precio').value;
   var lugar = document.getElementById('lugar').value;
 
-  var h1 = document.createElement("h1");
-  var h2 = document.createElement("h2");
-  var h3 = document.createElement("h3");
+  var h1 = document.createElement("h3");
+  var h2 = document.createElement("h4");
+  var h3 = document.createElement("h5");
  
   //Variables que crea un texto de lo que hay en cada input
   var textoProducto = document.createTextNode(producto);
@@ -102,3 +102,11 @@ mydiv.onclick = function(event){
   mylist.appendChild(myli);
   //
  }
+/////////////////////
+//Calculo global
+////////////////////
+
+var mycalc = document.getElementById('addcalc');
+mycalc.onclick = function(){
+  document.getElementById('calculoglobal').style.display = 'block';
+  }
