@@ -7,27 +7,29 @@ var initCalendar = function() {
   });
 };
 
+//Para que cuando hagas click en el evento salga el modal
 var eventClicked = function(calEvent, jsEvent, view) {
-  //alert('Event: ' + calEvent.title);
-  //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-  //alert('View: ' + view.name);
+  //Borrar evento del calendario haciendo click en el evento
+   $('#calendar').fullCalendar('removeEvents', calEvent.id);
+  
+  //Ahora quiero que después de borrarlo aparezca el modal
 
-  //Estoy cambiando esto:
-  document.calendarEvent.title = $("#").val();
-
+  $("#myModal").modal("show");
+  //document.calendarEvent = calEvent;
+  //$("#comida").val(calEvent.title);
+  //if (calEvent.start.time ==) {
+    //eliges opción del desp`legable
+  //} 
 }
 
-//Aquí se crea el evento
+//Para crear un evento
 var createEvent =function(event) {
   $("#calendar").fullCalendar("renderEvent", event);
 };
 
-//Clickar en un día
+//Clickas en un día
 var dayClicked = function(date, jsEvent, view) {
-  //displayEventCreationOptions()
-
-  //Con esto de abajo se crea un nuevo evento donde pinchas:
-  //createEventAtMoment(date, "Evento de prueba");
+  //Muestras el modal y creas un evento
   $("#myModal").modal("show");
   document.calendarEvent = {
       "allDay": false,
@@ -42,14 +44,15 @@ $(document).ready(function() {
     initCalendar();
 });
 
+//Para que esconda el modal y borre los valores antes puestos:
 var resetAndHideModal = function() {
   $("#comida").val("");
   $("#myModal").modal("hide");
 }
-
+//Para que cuando des al botón Guardar, recoja el valor de los inputs
 $(document).ready(function()
   {
-    //Aquí abajo llamas al id del boton de Guardar, que cuando hagas click
+    
   $("#save").click(function (event) {
     document.calendarEvent.title = $("#comida").val();
     var moment = document.calendarEvent.start;
@@ -59,18 +62,18 @@ $(document).ready(function()
     if (meal == 0)
     {
       document.calendarEvent.start = moment.time("09:00:00");
-      document.calendarEvent.start = moment.time("10:00:00");
+      //document.calendarEvent.start = moment.time("10:00:00");
       document.calendarEvent.backgroundColor = "#8EBBCA";
     }
     else if (meal == 1)
     {
       document.calendarEvent.start = moment.time("13:00:00");
-      document.calendarEvent.start = moment.time("14:00:00");
+      //document.calendarEvent.start = moment.time("14:00:00");
       document.calendarEvent.backgroundColor = "#6193A4";
     }
     else {
       document.calendarEvent.start = moment.time("21:00:00");
-      document.calendarEvent.start = moment.time("22:00:00");
+      //document.calendarEvent.start = moment.time("22:00:00");
       document.calendarEvent.backgroundColor = "#477584";
     }
 
@@ -89,9 +92,10 @@ mydiv.onclick = function(){
   var precio = document.getElementById("precio").value;
   var lugar = document.getElementById("lugar").value;
 
-  var h1 = document.createElement("h3");
-  var h2 = document.createElement("h4");
-  var h3 = document.createElement("h5");
+  var h3 = document.createElement("h3");
+  var h4 = document.createElement("h4");
+  h4.setAttribute('class', 'precios');
+  var h5 = document.createElement("h5");
  
   //Variables que crea un texto de lo que hay en cada input
   var textoProducto = document.createTextNode(producto);
@@ -101,22 +105,36 @@ mydiv.onclick = function(){
   var myli = document.createElement("li");
   var mylist = document.getElementById("list");
   //
-  h1.appendChild(textoProducto);
-  h2.appendChild(textoPrecio);
-  h3.appendChild(textoLugar);
+  h3.appendChild(textoProducto);
+  h4.appendChild(textoPrecio);
+  h5.appendChild(textoLugar);
   //
-  myli.appendChild(h1);
-  myli.appendChild(h2);
   myli.appendChild(h3);
+  myli.appendChild(h4);
+  myli.appendChild(h5);
 
   mylist.appendChild(myli);
   //
  }
 /////////////////////
 //Calculo global
-////////////////////
+/////////////////////
 
 var mycalc = document.getElementById("addcalc");
 mycalc.onclick = function(){
-  document.getElementById("calculoglobal").style.display = "block";
+
+  var suma = document.getElementsByClassName("precios");
+  sum = 0;
+
+  for (i=0; i<suma.length; i++){
+    sum += parseInt(suma[i].textContent);
+        console.log(sum);
   }
+
+  var bloque15=document.getElementById('calculoglobal');
+  bloque15.innerHTML = "Tu suma es" + sum;
+  document.getElementById("calculoglobal").style.display = "block";
+
+
+  
+}
