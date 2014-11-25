@@ -11,7 +11,7 @@ var initCalendar = function() {
 var eventClicked = function(calEvent, jsEvent, view) {
   //Borrar evento del calendario haciendo click en el evento
    $('#calendar').fullCalendar('removeEvents', calEvent.id);
-  
+
   //Ahora quiero que después de borrarlo aparezca el modal
 
   $("#myModal").modal("show");
@@ -82,12 +82,11 @@ $(document).ready(function()
   });
 });
 
-////////////////////
 //Lista de la compra
-////////////////////
+
 var mydiv = document.getElementById("addinput");
-mydiv.onclick = function(){
-   //Variables que nos recoge el valor de los inputs
+mydiv.onclick = function guardar(){
+   
   var producto = document.getElementById("producto").value;
   var precio = document.getElementById("precio").value;
   var lugar = document.getElementById("lugar").value;
@@ -97,28 +96,26 @@ mydiv.onclick = function(){
   h4.setAttribute('class', 'precios');
   var h5 = document.createElement("h5");
  
-  //Variables que crea un texto de lo que hay en cada input
   var textoProducto = document.createTextNode(producto);
   var textoPrecio = document.createTextNode(precio);
   var textoLugar = document.createTextNode(lugar);
-  //
+  
   var myli = document.createElement("li");
   var mylist = document.getElementById("list");
-  //
+  
   h3.appendChild(textoProducto);
   h4.appendChild(textoPrecio);
   h5.appendChild(textoLugar);
-  //
+  
   myli.appendChild(h3);
   myli.appendChild(h4);
   myli.appendChild(h5);
 
   mylist.appendChild(myli);
-  //
+  
  }
-/////////////////////
+
 //Calculo global
-/////////////////////
 
 var mycalc = document.getElementById("addcalc");
 mycalc.onclick = function(){
@@ -132,10 +129,9 @@ mycalc.onclick = function(){
   }
 
   var bloque15=document.getElementById('calculoglobal');
-  bloque15.innerHTML = "El total es" + sum;
+  bloque15.innerHTML = "El total de euros es " + sum;
   document.getElementById("calculoglobal").style.display = "block";
 }
-
 
 //Borrar todos los elementos de la lista
 var removeAll = document.getElementById('removelist');
@@ -145,7 +141,7 @@ function borrartodos (){
   document.getElementById('list').innerHTML = "";
 }
 
-//local storage
+//local storage que funciona con jquery
 $(document).on("ready", function(){
   $("#addinput").on("click", function(){
           var product = $("#producto").val();
@@ -161,3 +157,26 @@ $(document).on("ready", function(){
           window.localStorage.removeItem("lugar");
   })
 })
+
+//Prueba que falla de local storage con json y javascript
+//var input = document.getElementsByClassName('todolist');
+//var compraList = JSON.parse(localStorage.getItem('Events'))  || [];
+
+//for(var i=0; i<eventList.length; i++){
+  //guardar(compraList[i].name);
+//}
+
+  //function addEvent(event){
+
+    //guardar(input.value);
+    //var newProduct = { 
+      //name: producto.value, 
+      //place: precio.value, 
+      //date: lugar.value, 
+    //};
+    //compraList.push(newProduct);
+    //var newProductstr = JSON.stringify(compraList);
+    //localStorage.setItem('Events', newProductstr);
+//}
+
+//addinput.onclick = addEvent;
