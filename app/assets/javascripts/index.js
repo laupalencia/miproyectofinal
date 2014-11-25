@@ -127,14 +127,37 @@ mycalc.onclick = function(){
   sum = 0;
 
   for (i=0; i<suma.length; i++){
-    sum += parseInt(suma[i].textContent);
+    sum += parseFloat(suma[i].textContent);
         console.log(sum);
   }
 
   var bloque15=document.getElementById('calculoglobal');
-  bloque15.innerHTML = "Tu suma es" + sum;
+  bloque15.innerHTML = "El total es" + sum;
   document.getElementById("calculoglobal").style.display = "block";
-
-
-  
 }
+
+
+//Borrar todos los elementos de la lista
+var removeAll = document.getElementById('removelist');
+removeAll.onclick = borrartodos;
+
+function borrartodos (){
+  document.getElementById('list').innerHTML = "";
+}
+
+//local storage
+$(document).on("ready", function(){
+  $("#addinput").on("click", function(){
+          var product = $("#producto").val();
+          var price = $("#precio").val();  
+          var place = $("#lugar").val();             
+          window.localStorage.setItem("producto",product);
+          window.localStorage.setItem("precio",price);
+          window.localStorage.setItem("lugar",place);
+  })
+  $("#removelist").on("click", function(){
+          window.localStorage.removeItem("producto");
+          window.localStorage.removeItem("precio");
+          window.localStorage.removeItem("lugar");
+  })
+})
