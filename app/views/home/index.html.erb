@@ -2,10 +2,20 @@
 	<header>
 		<article class="encabezado">
 			<ul class="lista">
+      <% if user_signed_in? %>
+          <li><%= link_to 'Salir', destroy_user_session_path, :style => 'color: #FFFFFF ', :method => :delete %></li>
+          <p><%= current_user.name %></p>
+          <% else %>
+          <li><%= link_to 'Regístrate', new_user_registration_path %></li>
+          <li><%= link_to 'Identificate', new_user_session_path %></li>
+
+          <% end %>
+      </ul>
+    <!--   <ul class="lista">
 				<li><%= link_to 'Login', new_user_session_path %></li>
 			
 				<li><%= link_to 'Sign up', new_user_registration_path %></li>
-			</ul>
+			</ul> -->
 		</article>
 		<article class="design"></article>
 	</header>
@@ -46,6 +56,9 @@
 			</div>
 
 	</section>
+  <section>
+    <button id="guardardatos" class="btn btn-primary">Guardar datos</button> 
+  </section>
 
 	<section class="michef">
 		<div class="speech-bubble"> Crea tu lista de la compra. Añade el producto, el precio y dónde lo quieres comprar. </div>

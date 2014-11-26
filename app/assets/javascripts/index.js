@@ -13,9 +13,7 @@ var initCalendar = function() {
 var eventClicked = function(calEvent, jsEvent, view) {
   //Borrar evento del calendario haciendo click en el evento
    $('#calendar').fullCalendar('removeEvents', calEvent.id);
-
   //Ahora quiero que después de borrarlo aparezca el modal
-
   $("#myModal").modal("show");
   //document.calendarEvent = calEvent;
   //$("#comida").val(calEvent.title);
@@ -47,7 +45,8 @@ var saveEvents = function(events) {
   $.post(route, events);
 }
 
-var retrieveEventsFromCalendarAndSave = function() { //esta es la función que se le pone al botón
+var retrieveEventsFromCalendarAndSave = document.getElementById("guardardatos");
+retrieveEventsFromCalendarAndSave.onclick = function() { //esta es la función que se le pone al botón
   var events = [];
   $("#calendar").fullCalendar('clientEvents', function(event){
     events.push(event);
