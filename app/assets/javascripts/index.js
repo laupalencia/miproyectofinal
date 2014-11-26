@@ -141,7 +141,10 @@ function borrartodos (){
   document.getElementById('list').innerHTML = "";
 }
 
-//local storage que funciona con jquery
+//Borrar comprados
+
+
+//local storage que funciona con jquery y coge sólo el último input
 $(document).on("ready", function(){
   $("#addinput").on("click", function(){
           var product = $("#producto").val();
