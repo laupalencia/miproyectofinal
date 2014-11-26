@@ -4,6 +4,8 @@ var initCalendar = function() {
     dayClick: dayClicked,
     eventClick: eventClicked,
     timeFormat: ''  //con esto se oculta la hora en el calendario
+    //cuando tengas la vista de home hecha, aquí pones:
+    //events: document.calendarEvents
   });
 };
 
@@ -38,6 +40,20 @@ var dayClicked = function(date, jsEvent, view) {
       "editable": true
   };
 };
+
+var saveEvents = function(events) {
+  debugger;
+  var route = ""; //url del controller de user/events
+  $.post(route, events);
+}
+
+var retrieveEventsFromCalendarAndSave = function() { //esta es la función que se le pone al botón
+  var events = [];
+  $("#calendar").fullCalendar('clientEvents', function(event){
+    events.push(event);
+  });
+  setTimeout(function(){saveEvents(events);}, 2000);
+}
 
 $(document).ready(function() {
     // page is now ready, initialize the calendar...
@@ -140,9 +156,6 @@ removeAll.onclick = borrartodos;
 function borrartodos (){
   document.getElementById('list').innerHTML = "";
 }
-
-//Borrar comprados
-
 
 //local storage que funciona con jquery y coge sólo el último input
 $(document).on("ready", function(){
