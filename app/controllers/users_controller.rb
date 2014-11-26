@@ -5,4 +5,6 @@ class UsersController < ApplicationController
 	    @user = User.find(params[:id])
 	    redirect_to 'home#index'
 	end
+
+	Events POST ':json events'
 end
