@@ -1,4 +1,6 @@
-
+.hello{
+	float:left;
+}
 .encabezado{
 	background-color: #6495ED;
 	width:100%;
